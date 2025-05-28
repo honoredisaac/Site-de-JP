@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Pedra papel tesoura</title>
+  </head>
+  <body>
+    <h1 id="text">Pedra Papel Tesoura</h1>
+    <button id="bt" onclick="ppt()">Jogar</button><br>
+    <a href="index.html">Voltar</a><br>
+  </body>
+  <script>
+    let text = document.getElementById('text');
+    let bt = document.getElementById('bt');
+    let poss = ["📄 (papel)","⬛ (pedra)","✂ (tesoura)"];
+    function ppt(){
+      bt.style.display = "none";
+      text.innerText = "Preparado?"
+      
+      setTimeout(()=>{text.innerText = "3!"}, 1000);
+      setTimeout(()=>{text.innerText = "2!"}, 2000);
+      setTimeout(()=>{text.innerText = "1!"}, 3000);
+      setTimeout(()=>{text.innerText = `Eu escolho: ${poss[Math.floor(Math.random()*poss.length)]}. E você?`}, 4000);
+      setTimeout(()=>{text.innerText = "Pedra Papel Tesoura"; bt.style.display = "block"}, 7000);
+    }
+  </script>
+</html>
